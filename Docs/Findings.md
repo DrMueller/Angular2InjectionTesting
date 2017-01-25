@@ -46,17 +46,18 @@ Example: test-components.component has 3 tags for the comp1, so 3 services get c
 ## Hierarchy
 If a Sub-Component, so a Component its tag is used on another Component, also requests a Service it doesn't provide, by itself, the parent-Component gets recursively checked.
 For example:
-> Coretest1Service created from Comp1Component
-> comp1.component.ts:20 Created Comp1Component with Service from: Comp1Component
-> sub-comp3-1.component.ts:18 Created SubComp31Component with Service from: Comp1Component
-> sub-sub-comp3-1-1.component.ts:18 Created SubSubComp311Component with Service from: Comp1Component
-> sub-sub-comp3-1-1.component.ts:18 Created SubSubComp311Component with Service from: Comp1Component
-> sub-comp3-1.component.ts:18 Created SubComp31Component with Service from: Comp1Component
-> sub-sub-comp3-1-1.component.ts:18 Created SubSubComp311Component with Service from: Comp1Component
-> sub-sub-comp3-1-1.component.ts:18 Created SubSubComp311Component with Service from: Comp1Component
+- Coretest1Service created from Comp1Component
+- comp1.component.ts:20 Created Comp1Component with Service from: Comp1Component
+- sub-comp3-1.component.ts:18 Created SubComp31Component with Service from: Comp1Component
+- sub-sub-comp3-1-1.component.ts:18 Created SubSubComp311Component with Service from: Comp1Component
+- sub-sub-comp3-1-1.component.ts:18 Created SubSubComp311Component with Service from: Comp1Component
+- sub-comp3-1.component.ts:18 Created SubComp31Component with Service from: Comp1Component
+- sub-sub-comp3-1-1.component.ts:18 Created SubSubComp311Component with Service from: Comp1Component
+- sub-sub-comp3-1-1.component.ts:18 Created SubSubComp311Component with Service from: Comp1Component
 
 
 # TLDR
 - Create shared services in a core-folder and register them ONLY on the app-module
-- Never use feature-services outside of their feature
+- Never use feature-services outside of their module
 - If shared-feature services are needed, register them on the app-module via the _forRoot_ trick
+- Use component-provisioning only, if the service is closely attached to each component-instance and its sub-components
