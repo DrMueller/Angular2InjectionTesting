@@ -1,3 +1,28 @@
-<h1>
-  {{title}}
-</h1>
+<div class="container m2app-dark">
+    <nav class="navbar navbar-default" role="navigation">
+        <ul class="nav navbar-nav">
+            <li class="dropdown">
+                <a routerLink="testEager" routerLinkActive="active">Eager-Module</a>
+            </li>
+              <li class="dropdown">
+                <a routerLink="testEager2" routerLinkActive="active">Eager-Module 2</a>
+            </li>
+
+            <li class="dropdown">
+                <a routerLink="testLazy" routerLinkActive="active">Lazy-Module 1</a>
+            </li>
+            <li class="dropdown">
+                <a routerLink="testLazy2" routerLinkActive="active">Lazy-Module 2</a>
+            </li>
+
+            <li class="dropdown">
+                <a routerLink="testComponents" routerLinkActive="active">Test Components</a>
+            </li>
+
+        </ul>
+    </nav>
+    <div class="jumbotron">
+        <router-outlet></router-outlet>
+    </div>
+</div>
+

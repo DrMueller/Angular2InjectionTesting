@@ -1,0 +1,1 @@
+export * from "./test-lazy2.module";
